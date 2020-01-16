@@ -1,3 +1,5 @@
+# Program to find the depth of dictionary as well as able to handle Python object
+
 class Person(object):
     def __init__(self, first_name, last_name, father):
         self.first_name = first_name
@@ -8,6 +10,10 @@ person_a = Person("User", "1", None)
 person_b = Person("User", "2", person_a)
     
 def print_depth(data, level=1):
+    """
+    Function to print all the keys of the dictionary and object 
+    with their depth
+    """
     for key, value in data.items():
         if isinstance(value, dict):
             print("{0} : {1}".format(key, level))
@@ -20,3 +26,4 @@ def print_depth(data, level=1):
             print("{0} : {1}".format(key, level))
         
 print_depth({'key1':1, 'key2': { 'key3': 1, 'key4': {'key5':4, 'user': person_b}}})
+
